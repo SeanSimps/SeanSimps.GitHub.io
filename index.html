@@ -37,18 +37,18 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur rhoncus, lorem vitae euismod tempor, massa urna cursus tortor, ac pharetra mauris urna eget velit. Praesent tempor eleifend felis, in euismod sem posuere id. Quisque ac mi a nulla pharetra sollicitudin. Sed tempus eros eu augue euismod, vel malesuada magna blandit. Sed tempor tristique diam, semper tempor nisi posuere vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas faucibus rhoncus metus, vel posuere dui cursus ac. Suspendisse imperdiet nec ipsum eget accumsan. Vivamus lacinia leo eget arcu maximus, quis hendrerit augue tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt accumsan tincidunt. Aliquam quis dolor interdum lacus tempor malesuada egestas id enim. Fusce sit amet fringilla arcu. Aliquam a fermentum elit. Pellentesque dignissim, nibh id imperdiet congue, nunc ligula ullamcorper augue, sed euismod metus erat pulvinar orci.</p>
         
         <div class="tab-titles">
-          <p class="tab-links active-link">Skills</p>
-          <p class="tab-links">Experience</p>
-          <p class="tab-links">Education</p>
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
         </div>
-        <div class="tab-contents">
+        <div class="tab-contents active-tab" id="skills">
           <ul>
             <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
             <li><span>Web Development</span><br>Web App Development</li>
             <li><span>App Development</span><br>Building Android/iOS Apps</li>
           </ul>
         </div>
-        <div class="tab-contents">
+        <div class="tab-contents" id="experience">
           <ul>
             <li><span>2021 - Current</span><br>UI/UX Design Training at ET Institute</li>
             <li><span>2019 - 2021</span><br>Team lead at StarApp LLC.</li>
@@ -56,7 +56,7 @@
             <li><span>2016 - 2017</span><br>Internship at ekart eCommerce</li>
           </ul>
         </div>
-        <div class="tab-contents">
+        <div class="tab-contents" id="education">
           <ul>
             <li><span>2016</span><br>UI/UX Design Training at ET Institute</li>
             <li><span>2016</span><br>MBA from MIT Bangalore</li>
@@ -67,6 +67,21 @@
       </div>
     </div>
   </div>
+
+<script>
+
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab(tabname){
+    for(tablink of tablinks){
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+      tabcontent.classList.remove("active-tab");
+    }
+  }
+
+</script>
 
   </body>
 </html>
